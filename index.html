@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resoviq · Demo</title>
+  <style>
+    :root {
+      --bg: #0f1120;
+      --card: #1a1b27;
+      --accent: #6c63ff;
+      --accent-2: #10b981;
+      --text: #e6e8f0;
+      --muted: #9aa0b4;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: radial-gradient(1200px 600px at 50% -10%, #23264a 0%, var(--bg) 60%);
+      color: var(--text);
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid #262842;
+      border-radius: 18px;
+      padding: 44px 40px;
+      max-width: 560px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 24px 60px rgba(0,0,0,.45);
+    }
+    .badge {
+      display: inline-block;
+      font-size: 12px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--accent-2);
+      border: 1px solid var(--accent-2);
+      border-radius: 999px;
+      padding: 6px 14px;
+      margin-bottom: 22px;
+    }
+    h1 {
+      font-size: 30px;
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+    h1 span { color: var(--accent); }
+    p { color: var(--muted); line-height: 1.6; margin-bottom: 28px; }
+    .btn {
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: 12px;
+      padding: 12px 26px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform .15s ease, box-shadow .15s ease;
+    }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(108,99,255,.4); }
+    .counter {
+      margin-top: 24px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+    .counter b { color: var(--text); font-size: 22px; display: block; }
+    footer { margin-top: 30px; font-size: 12px; color: var(--muted); }
+    footer a { color: var(--accent); text-decoration: none; }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <span class="badge">Demo Project</span>
+    <h1>Hello from <span>Resoviq</span> 👋</h1>
+    <p>
+      A tiny single-page demo used to test our team workflow —
+      branches, pull requests, reviews and merges.
+    </p>
+    <button class="btn" id="clickBtn">Click me</button>
+    <div class="counter">
+      <b id="count">0</b>
+      clicks
+    </div>
+    <footer>
+      Built by <a href="https://the-mfk.tech" target="_blank">MFK</a> ·
+      <a href="https://resoviq.com" target="_blank">Resoviq</a>
+    </footer>
+  </main>
+
+  <script>
+    const btn = document.getElementById('clickBtn');
+    const count = document.getElementById('count');
+    let n = 0;
+    btn.addEventListener('click', () => {
+      n += 1;
+      count.textContent = n;
+    });
+  </script>
+</body>
+</html>
